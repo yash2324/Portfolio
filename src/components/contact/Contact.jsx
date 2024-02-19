@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import "./contact.scss";
 import { motion, useInView } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 const variants = {
   initial: {
@@ -20,34 +19,6 @@ const variants = {
 
 const Contact = () => {
   const ref = useRef();
-
-  const formRef = useRef();
-
-  const [error, setError] = useState(false);
-
-  const [success, setSuccess] = useState(false);
-
-  const isInView = useInView(ref, { margin: "-100px" });
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_qcxe2om",
-        "template_n9rbuer",
-        formRef.current,
-        "WdQbQ8qjMKZzdui13"
-      )
-      .then(
-        (result) => {
-          setSuccess(true);
-        },
-        (error) => {
-          setError(true);
-        }
-      );
-  };
 
   return (
     <motion.div
