@@ -7,13 +7,15 @@
     position: sticky;
     top: 0;
     left: 0;
-    padding-top: 50px;
+    padding-top: 20px;
     text-align: center;
     color: orange;
     font-size: 36px;
-
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+    z-index: 10;
     @include mobile {
-      padding-top: calc(100vh - 100px);
+      position: static;
+      padding-top: 10px;
       font-size: 24px;
       z-index: 0;
     }
@@ -83,7 +85,7 @@
 
         h2 {
           font-size: 72px;
-
+          z-index: 0;
           @include mobile {
             font-size: 36px;
           }

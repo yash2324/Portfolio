@@ -69,5 +69,21 @@
     width: 50%;
     font-weight: bold;
     z-index: 0;
+    @include mobile {
+      animation: slideText 8s linear infinite;
+      font-size: 22vh;
+      width: 100%; /* Adjust the width to a suitable value */
+      max-width: 1000px; /* Set a maximum width to limit overflow */
+      bottom: -20px;
+      overflow: hidden;
+      @keyframes slideText {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    }
   }
 }

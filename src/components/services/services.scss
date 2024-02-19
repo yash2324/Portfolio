@@ -6,7 +6,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  @include mobile {
+    z-index: 1000;
+    flex-direction: row;
+  }
   .textContainer {
     flex: 1;
     align-self: flex-end;
