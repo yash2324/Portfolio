@@ -1,6 +1,6 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import "./services.scss";
-import { color, motion, useInView } from "framer-motion";
 
 const variants = {
   initial: {
@@ -21,93 +21,88 @@ const variants = {
 
 const Services = () => {
   const ref = useRef();
-
   const isInView = useInView(ref, { margin: "-100px" });
 
   return (
     <motion.div
       className="services"
       variants={variants}
-      initial="intitial"
+      initial="initial"
       ref={ref}
-      animate={"animate"}
+      animate={isInView ? "animate" : ""}
     >
       <motion.div className="textContainer" variants={variants}>
-        <p>
-          I focus on helping your brand grow <br /> and move forward
-        </p>
+        <p>Explore the technologies that empower my work and expertise.</p>
         <hr />
       </motion.div>
-      <motion.div className="titleContainer" variants={variants}>
-        <div className="title">
-          <img src="/people.webp" alt="" />
-          <h1>
-            <motion.b whileHover={{ color: "orange" }}>Unique</motion.b> Ideas
-          </h1>
-        </div>
 
-        <div className="title">
-          <h1>
-            <motion.b whileHover={{ color: "orange" }}>For Your</motion.b>{" "}
-            Business.
-          </h1>
-          <button>WHAT WE DO?</button>
-        </div>
-      </motion.div>
       <motion.div className="listContainer" variants={variants}>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            We do branding of your product through social media. We mainly use
-            Instagram , Facebook ads and other social media websites such as X
-            and Youtube.
-          </p>
-          <button>Go</button>
-        </motion.div>
-
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>UI/UX Design</h2>
-          <p>
-            We create best UI/UX designs for your websites or social media
-            platform. We use modern tools suuch as Figma , Adobe Illustrator and
-            Canva.
-          </p>
-          <button>Go</button>
-        </motion.div>
-
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Web Design</h2>
-          <p>
-            We create best designs for your websites or social media platform.
-            We use modern tools suuch as Figma , Adobe Illustrator and Canva.
-          </p>
-          <button>Go</button>
-        </motion.div>
-
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Front-End Development</h2>
-          <p>
-            We create best front-end for your websites using ReactJs and modern
-            framework such as NextJs , Typescript , VueJs etc. We try to deliver
-            our best product.
-          </p>
-          <button>Go</button>
-        </motion.div>
+        {techStack.map((tech, index) => (
+          <motion.div
+            key={index}
+            className="box"
+            variants={variants}
+            whileHover={{ background: "lightgray", color: "black" }}
+          >
+            <div className="logo-container">
+              <img
+                src={`${tech.logo}`}
+                alt={`${tech.title} `}
+                // style={{ width: "100px", height: "100px" }}
+              />
+            </div>
+          </motion.div>
+        ))}
       </motion.div>
     </motion.div>
   );
 };
+
+const techStack = [
+  {
+    title: "Next.js",
+    logo: "https://media.crystallize.com/crystallize_marketing/23/1/14/6/next_js_logo.svg",
+  },
+  {
+    title: "React.js",
+    logo: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png",
+  },
+  {
+    title: "MongoDB",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/2560px-MongoDB_Logo.svg.png",
+  },
+  {
+    title: "Node.js",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png",
+  },
+  {
+    title: "Express.js",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
+  },
+  {
+    title: "TypeScript",
+    logo: "https://www.svgrepo.com/show/374144/typescript.svg",
+  },
+  {
+    title: "JavaScript",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/768px-JavaScript-logo.png",
+  },
+  {
+    title: "Tailwind CSS",
+    logo: "https://cdn.icon-icons.com/icons2/2699/PNG/512/tailwindcss_logo_icon_170649.png",
+  },
+  {
+    title: "Redux",
+    logo: "https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png",
+  },
+  {
+    title: "HTML",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png",
+  },
+  {
+    title: "CSS",
+    logo: " https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png",
+  },
+];
 
 export default Services;

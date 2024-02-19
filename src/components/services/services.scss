@@ -40,18 +40,23 @@
 
   .titleContainer {
     flex: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(300px, 1fr)
+    ); // Use grid with minimum box width and distribute remaining space
+    gap: 20px; // Add a gap between the boxes
+    max-width: 1366px;
+    margin: 10px;
 
     @include mobile {
-      width: 100%;
+      grid-template-columns: 1fr;
     }
 
     .title {
       display: flex;
       align-items: center;
-      gap: 50px;
+      gap: 25px;
 
       @include mobile {
         flex-direction: column;
@@ -101,26 +106,49 @@
   .listContainer {
     flex: 2;
     display: flex;
+    justify-content: space-evenly;
+    gap: 20px; // Add a gap between the boxes
     max-width: 1366px;
     margin: auto;
+    flex-wrap: wrap;
 
+    // Ensure there are at least three boxes in each row
     @include mobile {
       flex-direction: column;
       width: 100%;
     }
 
     .box {
-      padding: 50px;
-      border: 0.5px solid gray;
+      width: calc(
+        25% - 20px
+      ); // Adjust the width to accommodate three boxes with gaps
+      padding-inline: 50px;
+      padding-block: 20px;
+
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
       @include mobile {
+        width: 100%; // Full width on mobile
         border: none;
         align-items: center;
         gap: 20px;
         padding: 10px;
+        overflow-y: scroll;
+      }
+      .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px; // Adjust the height as needed
+        max-width: 80%; // Limit the maximum width to prevent logos from stretching too much
+
+        img {
+          max-height: 100%; // Make sure the image does not exceed the container height
+          max-width: 100%; // Make sure the image does not exceed the container width
+          object-fit: contain; // Maintain the aspect ratio of the image
+        }
       }
 
       p {

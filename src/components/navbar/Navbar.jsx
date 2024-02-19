@@ -1,7 +1,7 @@
 import Sidebar from "../sidebar/Sidebar";
 import "./navbar.scss";
 import { motion } from "framer-motion";
-
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 const Navbar = () => {
   return (
     <div className="navbar">
@@ -15,17 +15,42 @@ const Navbar = () => {
           transition={{ duration: 0.5 }}
         ></motion.span>
         <div className="social">
-          <a href="#">
-            <img src="/facebook.png" alt="" />
+          <a
+            href="https://github.com/yash2324"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-400"
+          >
+            <FaGithub
+              className="icons"
+              style={{ width: "40px", height: "40px" }}
+              color="white"
+            />
           </a>
-          <a href="#">
-            <img src="/instagram.png" alt="" />
+
+          <a
+            href="https://linkedin.com/in/yash-gupta-012769206/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-400"
+          >
+            <FaLinkedin
+              className="icons"
+              style={{ width: "40px", height: "40px" }}
+              color="white"
+            />
           </a>
-          <a href="#">
-            <img src="/youtube.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="/dribbble.png" alt="" />
+
+          <a
+            href="https://twitter.com/yashgupta023"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-400"
+          >
+            <img
+              src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-white-icon.png"
+              style={{ width: "40px", height: "40px" }}
+            />
           </a>
         </div>
       </div>
