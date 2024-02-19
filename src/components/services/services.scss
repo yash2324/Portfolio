@@ -129,6 +129,9 @@
       flex-direction: column;
       justify-content: space-between;
 
+      &:hover {
+        background-color: transparent !important; // Add !important to override other styles
+      }
       @include mobile {
         width: 100%; // Full width on mobile
         border: none;

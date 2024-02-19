@@ -37,6 +37,16 @@ const sliderVariants = {
     },
   },
 };
+const itemVariants = {
+  open: {
+    y: 0,
+    opacity: 1,
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+  },
+};
 
 const Hero = () => {
   return (
@@ -54,8 +64,22 @@ const Hero = () => {
           </motion.h1>
 
           <motion.div className="buttons" variants={textVariants}>
-            <motion.button variants={textVariants}>My Projects</motion.button>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
+            <motion.a
+              href={`#Portfolio`}
+              variants={itemVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <motion.button variants={textVariants}>My Projects</motion.button>
+            </motion.a>
+            <motion.a
+              href={`#Contact`}
+              variants={itemVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <motion.button variants={textVariants}>Contact Me</motion.button>
+            </motion.a>
           </motion.div>
 
           <motion.img
