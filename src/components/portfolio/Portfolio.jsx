@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import "./portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
 
 const items = [
   {
@@ -10,37 +11,46 @@ const items = [
     img: "https://res.cloudinary.com/dljzvv5dh/image/upload/v1708365673/Portfolio/ijn4dxogasi8y2errjpn.png",
     desc: "FlixAI, replicates an OTT platform with integrated ChatGPT for personalized movie recommendations. Developed with React, Firebase, and Redux, it ensures real-time updates, seamless authentication, and a mobile-friendly design.",
     link: "https://flix-ai.vercel.app",
-    Github: "",
+    Github: "https://github.com/yash2324/FlixAI",
   },
 
   {
     id: 2,
     title: "Swift Flavours",
-    TechStack: " React.js , Tailwind CSS , Firebase , Redux , OpenAI ,TMDB API",
+    TechStack: " React.js , Tailwind CSS , Redux , Formik , Shimmer UI , Jest",
     img: "https://res.cloudinary.com/dljzvv5dh/image/upload/v1707853866/Portfolio/Swiftflavours-screenshots/sip56zuqbp8pmyg4ica7.png",
-    desc: "I created front-end of a crypto currency transaction website using ReactJs. I created a dashboard of crypto trading website in a better way by optimising the design significantly using Figma.",
+    desc: "I made a food ordering app's UI fetching realtime restaurant data from Swiggy's API. Also used Redux to build the cart functionality and make the site more efficient. Also, made the website very mobile friendly",
     link: "https://swift-flavours.vercel.app/",
-    Github: "",
+    Github: "https://github.com/yash2324/Swift-Flavours",
   },
 
   {
     id: 3,
-    title: "Spotify Clone",
-    TechStack: " React.js , Tailwind CSS , Firebase , Redux , OpenAI ,TMDB API",
-    img: "https://community.spotify.com/t5/image/serverpage/image-id/55514i8AFC0460BFEFB92C?v=v2",
-    desc: "I created a Spotify clone using ReactJs and SAAS. I created the design by taking inspiration from official Spotify web page and creating the design through Figma. I also used the useSound hook to give a smooth experience to the music app",
-    link: "",
-    Github: "",
+    title: "Meme Generator",
+    TechStack: "React.js , HTML , CSS , JavaScript",
+    img: "https://res.cloudinary.com/dljzvv5dh/image/upload/v1708366940/Portfolio/Swiftflavours-screenshots/dron8hyjrqtbpjtdj22g.png",
+    desc: "I created a meme Generator using React.js. It fetches latest meme templates from an API and users can make memes on them ",
+    link: "https://meme-generator-yg.netlify.app/",
+    Github: "https://github.com/yash2324/Meme-Generator-2",
   },
 
   {
     id: 4,
-    title: "Netflix Clone",
-    TechStack: " React.js , Tailwind CSS , Firebase , Redux , OpenAI ,TMDB API",
-    img: "https://assets.materialup.com/uploads/455710a0-6d36-4a9d-95cb-dfa280604dd3/preview.png",
-    desc: "I created a Netflix clone using ReactJs and SAAS. I created the design by taking inspiration from official Netflix web page and creating the design through Figma. Also used basics of NextJs to create multi-page ReactJs website.",
-    link: "",
-    Github: "",
+    title: "Smart Secure",
+    TechStack: " React.js , Tailwind CSS , Python , Flask",
+    img: "https://res.cloudinary.com/dljzvv5dh/image/upload/v1708367290/Portfolio/Swiftflavours-screenshots/uho0j8ikcle9bzejnjcy.png",
+    desc: "Made the front-end for a Crime Analysis System , using the past crimes data of India the model predicts the crime stats of a particular district for the upcoming years and also visualises the past stats of that district and area",
+    link: "https://smartsecure.netlify.app/",
+    Github: "https://github.com/yash2324/smart-secure",
+  },
+  {
+    id: 5,
+    title: "Tenzies",
+    TechStack: " React.js , JavaScript, HTML , CSS",
+    img: "https://res.cloudinary.com/dljzvv5dh/image/upload/v1708367458/Portfolio/Swiftflavours-screenshots/a15pncxqojzwy3zrshrw.png",
+    desc: "I made a basic tenzies Game , using React made the game more fun by adding confetti, Also used hooks to manage the state of the game",
+    link: "https://tenzies-game-yg.netlify.app/",
+    Github: "https://github.com/yash2324/Tenzies",
   },
 ];
 
@@ -65,10 +75,20 @@ const Single = ({ item }) => {
           </div>
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
+            <p>{item.TechStack}</p>
             <p>{item.desc}</p>
-            <a href={item.link} target="_blank">
-              <button>See Demo</button>
-            </a>
+            <div className="btns_links">
+              <a href={item.link} target="_blank">
+                <button>See Demo</button>
+              </a>
+              <a href={item.Github} target="__blank">
+                <FaGithub
+                  className="icons"
+                  style={{ width: "40px", height: "40px" }}
+                  color="white"
+                />
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -86,7 +106,7 @@ const Portfolio = () => {
 
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
-    damping: 30,
+    damping: 20,
   });
 
   return (

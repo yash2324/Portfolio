@@ -97,6 +97,11 @@
             font-size: 16px;
           }
         }
+        .btns_links {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
 
         button {
           background-color: orange;
