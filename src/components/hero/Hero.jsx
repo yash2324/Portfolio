@@ -72,7 +72,7 @@ const Hero = () => {
 
           <motion.div className="buttons" variants={textVariants}>
             <motion.a
-              href={`#Portfolio`}
+              href={`#My Projects`}
               variants={itemVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
