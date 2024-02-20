@@ -52,6 +52,17 @@ const Navbar = () => {
               style={{ width: "40px", height: "40px" }}
             />
           </a>
+          <a
+            href="https://drive.google.com/file/d/1w_AY_fYKSz_Dp9UXZb-nc5JpUIy6cLBF/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-400"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2125/2125395.png"
+              style={{ width: "40px", height: "40px" }}
+            />
+          </a>
         </div>
       </div>
     </div>
