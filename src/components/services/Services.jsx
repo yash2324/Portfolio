@@ -61,6 +61,10 @@ const Services = () => {
 
 const techStack = [
   {
+    title: "Java",
+    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/1200px-Java_programming_language_logo.svg.png",
+  },
+  {
     title: "Next.js",
     logo: "https://media.crystallize.com/crystallize_marketing/23/1/14/6/next_js_logo.svg",
   },
