@@ -62,6 +62,13 @@ const Hero = () => {
           <motion.h1 variants={textVariants}>
             Full Stack Developer & DSA Enthusiast
           </motion.h1>
+          <motion.img
+            animate="profilePicture"
+            className="profilePicture"
+            src="https://res.cloudinary.com/dljzvv5dh/image/upload/v1708445514/Portfolio/lhemkdewetpm9yomtvnp.png"
+            alt=""
+            variants={itemVariants}
+          />
 
           <motion.div className="buttons" variants={textVariants}>
             <motion.a

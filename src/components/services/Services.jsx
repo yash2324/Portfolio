@@ -21,27 +21,28 @@ const variants = {
 
 const Services = () => {
   const ref = useRef();
-  const isInView = useInView(ref, { margin: "-100px" });
+  const isMobile = window.innerWidth <= 1000; // Adjust the threshold as needed
+  const isInView = useInView(ref, { margin: isMobile ? "-50px" : "-100px" });
 
   return (
     <motion.div
       className="services"
-      variants={variants}
+      variants={isMobile ? {} : variants} // Apply animation only if not on mobile
       initial="initial"
       ref={ref}
-      animate={isInView ? "animate" : ""}
+      animate={isInView && !isMobile ? "animate" : ""}
     >
-      <motion.div className="textContainer" variants={variants}>
+      <motion.div className="textContainer" variants={isMobile ? {} : variants}>
         <p>Explore the technologies that empower my work and expertise.</p>
         <hr />
       </motion.div>
 
-      <motion.div className="listContainer" variants={variants}>
+      <motion.div className="listContainer" variants={isMobile ? {} : variants}>
         {techStack.map((tech, index) => (
           <motion.div
             key={index}
             className="box"
-            variants={variants}
+            variants={isMobile ? {} : variants}
             whileHover={{ background: "lightgray", color: "black" }}
           >
             <div className="logo-container">

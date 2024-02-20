@@ -18,7 +18,7 @@
       gap: 40px;
 
       @include mobile {
-        height: 50%;
+        height: 100%;
         width: 100%;
         gap: 20px;
         align-items: center;
@@ -57,6 +57,14 @@
       img {
         width: 50px;
       }
+      .profilePicture {
+        display: none;
+        @include mobile {
+          display: block;
+          width: 40%;
+          padding-top: 50px;
+        }
+      }
     }
   }
 
@@ -70,20 +78,7 @@
     font-weight: bold;
     z-index: 0;
     @include mobile {
-      animation: slideText 8s linear infinite;
-      font-size: 22vh;
-      width: 100%; /* Adjust the width to a suitable value */
-      max-width: 1000px; /* Set a maximum width to limit overflow */
-      bottom: -20px;
-      overflow: hidden;
-      @keyframes slideText {
-        0% {
-          transform: translateX(100%);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
+      display: none;
     }
   }
 }
