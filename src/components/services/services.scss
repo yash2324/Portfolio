@@ -123,7 +123,9 @@
       z-index: 1;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px; // Adjust the gap as needed
+      gap: 15px; // Adjust the gap as needed
+      margin-left: 5px;
+      margin-right: 5px;
     }
 
     .box {
@@ -169,21 +171,21 @@
         }
       }
 
-      button {
-        padding: 10px;
-        background-color: orange;
-        border: none;
-        cursor: pointer;
+      // button {
+      //   padding: 10px;
+      //   background-color: orange;
+      //   border: none;
+      //   cursor: pointer;
 
-        @include mobile {
-          background-color: transparent;
-          border: 1px solid orange;
-          border-radius: 5px;
-          color: orange;
-          width: 50%;
-          padding: 5px;
-        }
-      }
+      //   @include mobile {
+      //     background-color: transparent;
+      //     border: 1px solid orange;
+      //     border-radius: 5px;
+      //     color: orange;
+      //     width: 50%;
+      //     padding: 5px;
+      //   }
+      // }
     }
   }
 }
